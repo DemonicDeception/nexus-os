@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "nexus-os"
+version = "0.1.0"
+description = "AI-native operating system — Claude is the brain, Ollama is the hands"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic",
+    "httpx",
+    "pillow",
+    "pyautogui",
+    "mss",
+    "pynput",
+    "rich",
+    "ollama",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[project.scripts]
+nexus = "nexus.__main__:main"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
